@@ -32,6 +32,27 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+  <!--form submission script-->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+ 
+  <script>
+  function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/3742',
+        type:'post',
+        data:$("#contact").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+      });
+    }
+</script>
 </head>
 
 <body>
@@ -48,7 +69,7 @@
         <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
         <li><a href="#portfolio"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bx bx-server"></i> <span>Services</span></a></li>
+        <li><a href="#projects"><i class="bx bx-server"></i> <span>projects</span></a></li>
         <li><a href="#contact"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -61,14 +82,9 @@
       <h1>Anupam Chauhan</h1>
       <p>I'm <span class="typed" data-typed-items="Entrepreneur, Designer, Developer, Photographer"></span></p>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div>
-        <img src="assets/img/portfolio/qr-code.png" class="img-fluid" alt="">
+        <a href="https://www.linkedin.com/in/anupamchauhan1897/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://twitter.com/anupam1897" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://wa.me/+918830569128" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -438,12 +454,12 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <!-- ======= projects Section ======= -->
+    <section id="projects" class="projects">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Services</h2>
+          <h2>Projects</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -530,9 +546,9 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End projects Section -->
 
-    <!-- ======= Testimonials Section ======= -->
+    <!-- ======= Testimonials Section ======= 
     <section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
 
@@ -600,7 +616,10 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
+    
+    
+    End Testimonials Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -654,7 +673,7 @@
                 <div class="validate"></div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" rows="5" id="message" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
@@ -662,7 +681,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" onclick="SubForm()">Send Message</button></div>
             </form>
 
           </div>
